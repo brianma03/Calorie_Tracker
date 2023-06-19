@@ -1,0 +1,26 @@
+<div class = "row">
+    <h2> Food List</h2>
+</div>
+
+<table class = "table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th> Type </th>
+            <th> Calories</th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let food of foods" >
+            <td> {{ food.name }} </td>
+            <td> {{ food.type }} </td>
+            <td> {{ food.calories }} </td>
+            <td>
+                <button (click) = "updateFood(food.id)" class = "btn btn-primary"> Update</button>
+                <button (click) = "deleteFood(food.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+                <button (click) = "foodDetails(food.id)" class = "btn btn-primary" style="margin-left: 10px"> View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
