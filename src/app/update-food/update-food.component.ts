@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FoodService } from '../food.service';
 import { Food } from '../food';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NonNullAssert } from '@angular/compiler';
 
 @Component({
   selector: 'app-update-food',
@@ -11,8 +10,8 @@ import { NonNullAssert } from '@angular/compiler';
 })
 export class UpdateFoodComponent implements OnInit {
 
-  id: number = 0;
-  food: Food = new Food();
+  id: number;
+  food: Food;
   constructor(private foodService: FoodService,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -33,6 +32,6 @@ export class UpdateFoodComponent implements OnInit {
   }
 
   goToFoodList(){
-    this.router.navigate(['/food']);
+    this.router.navigate(['/foods']);
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Food } from '../food';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from '../food.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class FoodDetailsComponent implements OnInit {
 
   id: number = 0;
   food: Food;
-  constructor(private route: ActivatedRoute, private foodService: FoodService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private foodService: FoodService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -21,5 +21,9 @@ export class FoodDetailsComponent implements OnInit {
     this.foodService.getFoodById(this.id).subscribe( data => {
       this.food = data;
     });
+  }
+
+  goBack(){
+    this.router.navigate(['/foods']);
   }
 }

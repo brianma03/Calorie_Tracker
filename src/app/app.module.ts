@@ -21,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     UpdateFoodComponent,
     FoodDetailsComponent,
     FoodListComponent,
-    UpdateFoodComponent
   ],
   imports: [
     BrowserModule,

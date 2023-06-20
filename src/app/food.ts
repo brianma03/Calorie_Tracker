@@ -3,4 +3,5 @@ export class Food {
 	name: string;
 	type: string;
 	calories: number;
+	protein: number;
 }
